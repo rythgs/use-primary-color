@@ -1,0 +1,71 @@
+{
+  "name": "use-primary-color",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/usePrimaryColor.js",
+  "module": "dist/esm/usePrimaryColor.js",
+  "types": "dist/esm/usePrimaryColor.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "run-p build:*",
+    "build:cjs": "tsc",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "compile": "tsc",
+    "prepare": "npm run build",
+    "test": "jest",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "lint:type": "tsc --noEmit",
+    "fix": "run-s fix:eslint fix:prettier",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix:prettier": "npm run lint:prettier -- --write"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "color"
+  ],
+  "author": "rythgs",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/dom": "8.2.0",
+    "@testing-library/react-hooks": "7.0.2",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.10",
+    "@types/react": "^17.0.19",
+    "@typescript-eslint/eslint-plugin": "4.30.0",
+    "@typescript-eslint/parser": "4.30.0",
+    "canvas": "2.8.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-import-resolver-typescript": "2.4.0",
+    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.25.1",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "7.0.2",
+    "jest": "^27.1.0",
+    "lint-staged": "11.1.2",
+    "microbundle": "0.13.3",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.3.2",
+    "react-test-renderer": "17.0.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "engines": {
+    "node": ">= 12",
+    "npm": ">= 6.12"
+  }
+}
